@@ -4,6 +4,22 @@ import { useEffect, type MouseEvent, type ReactNode } from "react";
 
 const ABOUT_ID = "about-this-data";
 
+/** The public repository for the /data tools, linked from each tool's notes. */
+export const SOURCE_CODE_URL = "https://github.com/jaredfritz/cu-data-tools";
+
+/** "The code behind this map ... open source on GitHub", shared by the notes and the zoning Info panel. */
+export function OpenSourceNote({ linkClassName = "underline" }: { linkClassName?: string }) {
+  return (
+    <>
+      The code behind this map, and the scripts that build its data, are{" "}
+      <a href={SOURCE_CODE_URL} target="_blank" rel="noopener noreferrer" className={linkClassName}>
+        open source on GitHub
+      </a>
+      .
+    </>
+  );
+}
+
 function openAbout(): boolean {
   const section = document.getElementById(ABOUT_ID);
   const details = section?.querySelector("details");
@@ -13,7 +29,10 @@ function openAbout(): boolean {
   return true;
 }
 
-/** A page's sources, methods, and caveats, collapsed at the bottom of the page, ending with `credit`. */
+/**
+ * A page's sources, methods, and caveats, collapsed at the bottom of the page, ending with `credit` and a link to the
+ * open-source code.
+ */
 export function AboutThisData({ credit, children }: { credit: ReactNode; children: ReactNode }) {
   // Arriving at #about-this-data (e.g. from a shared link) opens the notes.
   useEffect(() => {
@@ -33,6 +52,9 @@ export function AboutThisData({ credit, children }: { credit: ReactNode; childre
         <div className="mt-2 space-y-2">
           {children}
           <p>{credit}</p>
+          <p>
+            <OpenSourceNote />
+          </p>
         </div>
       </details>
     </section>

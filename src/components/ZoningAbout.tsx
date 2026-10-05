@@ -1,3 +1,4 @@
+import { OpenSourceNote } from "@/components/site/AboutThisData";
 import { DATA_STATUS, permitsThrough } from "@/lib/dataUpdates";
 
 const linkClass = "underline hover:text-gray-800";
@@ -60,6 +61,9 @@ export default function ZoningAbout({
         . Each is mapped at its address in the city&apos;s address points. A few the city has no point for are placed
         inside the matching county parcel or between the neighboring addresses on the same side of the street.
         {unplaced > 0 && ` ${unplaced} permits whose addresses couldn't be matched aren't shown.`}
+      </p>
+      <p className="mt-2">
+        <OpenSourceNote linkClassName={linkClass} />
       </p>
       <p className="mt-2 text-gray-500">
         Map:{" "}
