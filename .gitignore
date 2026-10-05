@@ -1,0 +1,13 @@
+/node_modules
+/.next/
+/out/
+/build
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.env*
+!.env.example
+
+# Built locally by npm run data:parcels. The Champaign County GIS Consortium's terms don't allow redistributing
+# parcel data, so don't commit it.
+/public/data/parcels/

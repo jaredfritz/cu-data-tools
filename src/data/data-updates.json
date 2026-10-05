@@ -1,0 +1,13 @@
+{
+  "zoning": {
+    "asOf": "2026-03-16"
+  },
+  "crashes": {
+    "through": "2025-12-31",
+    "refreshed": "2026-10-04"
+  },
+  "parcels": {
+    "assessmentYear": 2025,
+    "refreshed": "2026-10-05"
+  }
+}
