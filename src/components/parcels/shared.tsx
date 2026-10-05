@@ -49,8 +49,12 @@ export function ParcelSources({ meta }: { meta: Parcels["meta"] }) {
   return (
     <p>
       Sources: parcel boundaries and assessments from the{" "}
+      <a href="https://www.ccgisc.org" target="_blank" rel="noopener noreferrer" className="underline">
+        Champaign County GIS Consortium
+      </a>{" "}
+      (CCGISC), through{" "}
       <a href={meta.parcelSourceUrl} target="_blank" rel="noopener noreferrer" className="underline">
-        Champaign County GIS Consortium via City of Champaign GIS
+        City of Champaign GIS
       </a>
       ; tax rates from the{" "}
       <a href={meta.rateSourceUrl} target="_blank" rel="noopener noreferrer" className="underline">
@@ -60,8 +64,9 @@ export function ParcelSources({ meta }: { meta: Parcels["meta"] }) {
       <a href={meta.addressSourceUrl} target="_blank" rel="noopener noreferrer" className="underline">
         Champaign County property tax inquiry
       </a>
-      . Municipalities come from each parcel&apos;s tax code. Values are estimates for illustration, not official tax
-      bills.
+      . Municipalities come from each parcel&apos;s tax code. Values per acre, tax estimates, and condo development
+      areas are this site&apos;s calculations, for illustration, not official tax bills. Visit CCGISC for official data
+      and terms.
     </p>
   );
 }
